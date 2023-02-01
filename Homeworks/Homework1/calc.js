@@ -13,6 +13,5 @@ if (action == "plus") {
 } else {
     console.log("error: invalid action");
 }
-console.log(result);
+console.log(`from the two numbers ${num1} and ${num2} that you entered, and requested '${action}' operation, the result is: ${result}`);
 
-console.log("haha");
