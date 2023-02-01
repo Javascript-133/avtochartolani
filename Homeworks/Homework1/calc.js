@@ -14,3 +14,5 @@ if (action == "plus") {
     console.log("error: invalid action");
 }
 console.log(result);
+
+console.log("haha");
