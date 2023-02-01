@@ -1,14 +1,14 @@
 let num1 = parseFloat(prompt("enter number 1: "));
 let num2 = parseFloat(prompt("enter number 2: "));
-let action = prompt("do plus, minus, multiply or divide?");
+let action = prompt("do +, -, * or / ?");
 let result;
-if (action == "plus") {
+if (action == "+") {
     result = num1 + num2;
-} else if (action == "minus") {
+} else if (action == "-") {
     result = num1 - num2;
-} else if (action == "multiply") {
+} else if (action == "*") {
     result = num1 * num2;
-} else if (action == "divide") {
+} else if (action == "/") {
     result = num1 / num2;
 } else {
     console.log("error: invalid action");
