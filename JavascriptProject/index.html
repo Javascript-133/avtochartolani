@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JAVASCRIPT-PROJECT</title>
+    <!-- STYLES -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./styleAndJS/style.css" />
+    <link rel="icon" href="./img/favicon.svg" />
+  </head>
+  <body>
+    <!-- ნავბარი -->
+    <div id="menuHolder">
+      <div
+        role="navigation"
+        class="sticky-top border-bottom border-top"
+        id="mainNavigation"
+      >
+        <div class="flexMain">
+          <div class="flex2">
+            <button
+              class="whiteLink siteLink"
+              style="border-right: 1px solid #eaeaea"
+              onclick="menuToggle()"
+              data-value="მენიუ"
+            >
+              <i class="fas fa-bars me-2"></i> მენიუ
+            </button>
+          </div>
+          <div
+            class="flex3 text-center"
+            id="siteBrand"
+            data-value="ავთოს პროექტი"
+          >
+            ავთოს პროექტი
+          </div>
+
+          <!-- როდესაც ეკრანის ზომა პატარაა -->
+          <div class="flex2 text-end d-block d-md-none">
+            <button
+              class="blackLink siteLink"
+              data-value="Login"
+              type="button"
+              onclick="window.location.href='pages/login.html';"
+            >
+              Login
+            </button>
+          </div>
+          <!-- როდესაც ეკრანის ზინა დიდია -->
+          <div class="flex2 text-end d-none d-md-block">
+            <button
+              class="blackLink siteLink"
+              data-value="Login"
+              type="button"
+              onclick="window.location.href='pages/login.html';"
+            >
+              Login
+            </button>
+          </div>
+        </div>
+      </div>
+      <div id="menuDrawer">
+        <div>
+          <a href="#" class="nav-menu-item" data-value="მთავარი">მთავარი</a>
+          <a
+            href="pages/about.html"
+            class="nav-menu-item"
+            data-value="ჩემს შესახებ"
+            >ჩემს შესახებ</a
+          >
+          <a href="#" class="nav-menu-item" data-value="კონტაქტი">კონტაქტი</a>
+        </div>
+      </div>
+
+      <!-- API კარუსელი -->
+
+      <div id="carouselCaptions" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img
+              id="slider-image"
+              src="img/carousel/14.jpg"
+              class="d-block w-100"
+              alt="carousel-image.jpg"
+            />
+            <div class="carousel-caption d-none d-md-block">
+              <p id="quote">QUOTE</p>
+              <h5 id="author">First slide</h5>
+            </div>
+          </div>
+        </div>
+        <button
+          id="getQuoteBtn2"
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#carouselCaptions"
+          data-bs-slide="prev"
+          onclick="changeSliderImage()"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button
+          class="carousel-control-next"
+          id="getQuoteBtn"
+          type="button"
+          data-bs-target="#carouselCaptions"
+          data-bs-slide="next"
+          onclick="changeSliderImage()"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+
+      <!-- Footer -->
+
+      <footer
+        class="d-flex flex-wrap justify-content-between align-items-center border-bottom"
+      >
+        <div class="nav col-sm justify-content-start">
+          <span id="footerAuthor"></span>
+        </div>
+        <div class="nav col-sm justify-content-center icon-links-container">
+          <a href="https://github.com/Avto555" target="_blank">
+            <img
+              src="img/github.svg"
+              class="icon-links"
+              height="24px"
+              width="24px"
+              alt="github.svg"
+            />
+          </a>
+          <a href="https://www.facebook.com/29NoEscape92" target="_blank">
+            <img
+              src="img/facebook.svg"
+              class="icon-links"
+              height="24px"
+              width="24px"
+              alt="facebook.svg"
+            />
+          </a>
+          <a
+            href="https://www.linkedin.com/in/avto-chartolani-17ba06101/"
+            target="_blank"
+          >
+            <img
+              src="img/linkedin.svg"
+              class="icon-links"
+              height="24px"
+              width="24px"
+              alt="linkedin"
+            />
+          </a>
+        </div>
+        <ul class="nav col-sm justify-content-end">
+          <li class="nav-item">
+            <a
+              href="pages/about.html"
+              class="nav-link px-2 text-light"
+              data-value="ჩემს შესახებ"
+              >ჩემს შესახებ</a
+            >
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link px-2 text-light" data-value="კონტაქტი"
+              >კონტაქტი</a
+            >
+          </li>
+        </ul>
+      </footer>
+    </div>
+    <!--  -->
+    <!-- SCRIPTS -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+      crossorigin="anonymous"
+    ></script>
+    <script src="styleAndJS/js.js"></script>
+  </body>
+</html>

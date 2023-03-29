@@ -1,0 +1,401 @@
+/* გამოვიყენე ეს ფერების პალეტი: https://coolors.co/palette/e63946-f1faee-a8dadc-457b9d-1d3557 */
+@import url("https://fonts.googleapis.com/css2?family=Alkatra:wght@400;500;600;700&display=swap"); /* fonts.google.com-დან */
+@font-face {
+  font-family: unicode_geo;
+  src: url("../assets/3d_unicode_geo.ttf"); /* fonts.ge-დან */
+}
+:root {
+  /* ასეც შეიძლება მნიშვნელობის შენახვა */
+  --red: #e63946;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+a:link,
+a:visited,
+a:hover,
+a:active {
+  text-decoration: none;
+}
+body {
+  background-color: #1d3557;
+  font-family: "Alkatra", sans-serif;
+  height: 100vh;
+  width: 80%;
+  margin: auto;
+}
+
+/*  */
+.flexMain {
+  display: flex;
+  align-items: center;
+}
+.flex1 {
+  flex: 1;
+}
+.flex2 {
+  flex: 2;
+}
+.flex3 {
+  flex: 3;
+}
+
+button.siteLink {
+  border: none;
+  padding: 24px;
+  display: inline-block;
+  min-width: 115px;
+}
+.whiteLink {
+  /* background: transparent; */
+  color: #1d3557;
+  background-color: #a8dadc;
+}
+.whiteLink:active {
+  background: #457b9d;
+  color: #eaeaea;
+}
+.blackLink {
+  color: #eaeaea;
+  background: var(--red);
+  transition: all 300ms linear;
+}
+
+#siteBrand {
+  /* font-family: 'unicode_geo', sans-serif;  */ /* ანიმაციაში გავიმეორე*/
+  font-size: 32px;
+  color: #252525;
+  line-height: 1em;
+}
+#menuDrawer {
+  background: #eaeaea;
+  position: fixed;
+  height: 100vh;
+  overflow: auto;
+  z-index: 12312;
+  top: 0;
+  left: 0;
+  border-right: 1px solid #eaeaea;
+  min-width: 25%;
+  max-width: 320px;
+  width: 100%;
+  transform: translateX(-100%);
+  transition: transform 200ms linear;
+}
+#mainNavigation {
+  transition: transform 200ms linear;
+  background: #eaeaea;
+}
+.drawMenu > #menuDrawer {
+  transform: translateX(0%);
+}
+.drawMenu > #mainNavigation {
+  transform: translateX(25%);
+}
+
+a.nav-menu-item:hover {
+  margin-left: 2px;
+  border-left: 10px solid #a8dadc;
+}
+a.nav-menu-item {
+  transition: border 200ms linear;
+  text-decoration: none;
+  display: block;
+  padding: 18px;
+  padding-left: 32px;
+  border-bottom: 1px solid #eaeaea;
+  font-weight: 700;
+  color: #457b9d;
+}
+select.noStyle {
+  border: none;
+  outline: none;
+}
+/* კარუსელი */
+#carouselCaptions {
+  height: 80vh;
+}
+.carousel-inner {
+  height: 100%;
+}
+
+.carousel-item {
+  height: 100%;
+}
+
+.carousel-item img {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+  opacity: 0.5; /*ზოგ სურათზე ტექსტი არ ჩანდა*/
+}
+
+.carousel-item h5 {
+  font-size: 4em;
+  text-align: center;
+  margin-top: 25%;
+  font-family: "Alkatra", sans-serif;
+}
+
+.carousel-item p {
+  font-size: 2em;
+  text-align: center;
+  margin-top: 25%;
+  font-family: "Alkatra", sans-serif;
+}
+
+/* ჩემი ანიმაცია */
+
+#siteBrand {
+  animation-name: slide;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-fill-mode: forwards;
+  position: relative;
+  font-family: "unicode_geo", sans-serif;
+}
+
+@keyframes slide {
+  0% {
+    color: var(--red);
+    left: -5px;
+  }
+  25% {
+    color: #a8dadc;
+    left: 5px;
+  }
+  50% {
+    color: #457b9d;
+    left: 0px;
+  }
+  100% {
+    color: #1d3557;
+    left: -5px;
+  }
+}
+/*  */
+
+/* footer */
+/* სიტყვების გაჩენის ანიმაცია footer */
+footer {
+  margin-top: 25px;
+  font-size: 20px;
+}
+#footerAuthor {
+  color: white;
+  font-family: "unicode_geo", sans-serif;
+  animation: textAnimation 1s infinite;
+}
+@keyframes textAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+/* საკონტაქტო აიქონები (Git, FB, in) */
+.icon-links-container {
+  display: flex;
+  justify-content: space-between;
+}
+.icon-links-container a {
+  flex-basis: 10%;
+}
+.icon-links {
+  /* პალეტის #ფერი ამ საიტის მეშვეობით გადავიყვანე ფილტრში: https://isotropic.co/tool/hex-color-to-css-filter/ */
+  filter: invert(90%) sepia(83%) saturate(183%) hue-rotate(104deg)
+    brightness(92%) contrast(86%);
+  /* filter: invert(32%) sepia(36%) saturate(4608%) hue-rotate(336deg)
+    brightness(94%) contrast(92%); */
+}
+
+hr {
+  filter: invert(32%) sepia(36%) saturate(4608%) hue-rotate(336deg)
+    brightness(94%) contrast(92%);
+}
+@media screen and (max-width: 767px) {
+  #footerAuthor {
+    display: none;
+  }
+}
+
+/* ABOUT გვერდი */
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap");
+
+.main-div {
+  height: 95vh;
+}
+@media screen and (min-width: 992px) {
+  .main-div {
+    display: grid;
+    grid-template-columns: repeat(2, 2fr);
+  }
+
+  .about-left {
+    position: relative;
+  }
+  .about-left-content {
+    position: absolute;
+    width: 80%;
+  }
+}
+/* წყარო: https://codepen.io/franknoirot/pen/xxJRNOW */
+#about-nav-home-link {
+  height: 5vh;
+  display: flex;
+  justify-content: center;
+}
+#about-nav-home-link a {
+  padding: 0.375em 1.125em;
+  font-size: 1rem;
+  background-color: var(--red);
+  color: #f1faee;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+  transition: border-top-left-radius 0.15s 0.15s ease-out,
+    border-top-right-radius 0.15s calc(0.15s * 2) ease-out,
+    border-bottom-right-radius 0.15s calc(0.15s * 3) ease-out,
+    border-bottom-left-radius 0.15s calc(0.15s * 4) ease-out,
+    box-shadow calc(0.15s * 4) ease-out, transform calc(0.15s * 4) ease-out,
+    background calc(0.15s * 4) steps(4, jump-end);
+}
+#about-nav-home-link a:hover,
+#about-nav-home-link a:focus {
+  background-color: #457b9d;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
+}
+/*  */
+.about-left {
+  background-image: linear-gradient(
+    19deg,
+    var(--red) 0%,
+    #f1faee 33%,
+    #a8dadc 66%,
+    #457b9d 100%
+  );
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 95vh;
+  color: #eaeaea;
+}
+.about-left-content > div {
+  background: #1d3557;
+  padding: 4rem 4rem 2.5rem 5rem;
+  text-align: center;
+
+  border-radius: 12px 12px 0 0;
+}
+.about-img img {
+  display: block;
+  width: 200px;
+}
+.about-img {
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+  border-radius: 50%;
+  transition: all 0.5s ease-in-out;
+}
+.profile-pic {
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+}
+
+.about-left-content h2 {
+  font-size: 2rem;
+  margin: 2.2rem 0 0.6rem 0;
+  line-height: 1.2;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #457b9d;
+}
+.about-left-content h3 {
+  font-weight: 300;
+  letter-spacing: 5px;
+  margin-top: 1.2rem;
+}
+.icons {
+  background: #457b9d;
+  display: flex;
+  justify-content: space-evenly;
+  border-radius: 0 0 12px 12px;
+  margin-top: 2px;
+}
+
+.about-right {
+  background: #1d3557;
+  height: 95vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 5rem;
+  text-align: center;
+  color: #f1faee;
+}
+.about-right h1 {
+  font-size: 5rem;
+  text-transform: uppercase;
+}
+.about-right h1 span {
+  color: var(--red);
+}
+.about-right h2 {
+  font-weight: 600;
+}
+.about-btns {
+  display: flex;
+  margin: 2rem 0;
+}
+.btn {
+  border: none;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  border: 2px solid #f1faee;
+  border-radius: 20px;
+  padding: 0.55rem 0;
+  width: 130px;
+  font-weight: 600;
+  background: transparent;
+  margin: 0 0.5rem;
+  cursor: pointer;
+  color: #f1faee;
+}
+.btn.btn-red {
+  background: var(--red);
+  color: #f1faee;
+  border-color: var(--red);
+  transition: all 0.5s ease-in-out;
+}
+.btn.btn-red:hover {
+  background: transparent;
+  border-color: #f1faee;
+  color: #f1faee;
+}
+.btn.btn-white {
+  transition: all 0.5s ease-in-out;
+}
+.btn.btn-white:hover {
+  background: var(--red);
+  border-color: #f1faee;
+  color: #f1faee;
+}
+.about-second p {
+  font-weight: 300;
+  padding: 0.5rem;
+  opacity: 0.8;
+}
